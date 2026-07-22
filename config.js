@@ -1,4 +1,4 @@
 window.APP_CONFIG = {
-  supabaseUrl: '',
-  supabaseAnonKey: ''
+  supabaseUrl: 'https://gsmmcgdogpsrpidsoulw.supabase.co',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzbW1jZ2RvZ3BzcnBpZHNvdWx3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ2ODQ0NDMsImV4cCI6MjEwMDI2MDQ0M30.nbAj29kSOzw5dAdNt74z5kH3ykeRATn1AJF2eRCkRog'
 };
