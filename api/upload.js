@@ -1,5 +1,5 @@
 const SUPABASE_URL = process.env.SUPABASE_URL;
-const SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY;
 
 function authorized(req) {
   const header = req.headers.authorization || '';
@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
   else { const chunks = []; for await (const chunk of req) chunks.push(chunk); body = Buffer.concat(chunks); }
   if (!body.length || body.length > 4 * 1024 * 1024) return res.status(400).json({ error: 'Tệp phải nhỏ hơn 4MB.' });
   const response = await fetch(`${SUPABASE_URL}/storage/v1/object/site-media/${path}`, {
-    method: 'POST', headers: { apikey: SERVICE_KEY, Authorization: `Bearer ${SERVICE_KEY}`, 'Content-Type': req.headers['content-type'] || 'application/octet-stream', 'x-upsert': 'true' }, body
+    method: 'POST', headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}`, 'Content-Type': req.headers['content-type'] || 'application/octet-stream', 'x-upsert': 'true' }, body
   });
   if (!response.ok) return res.status(response.status).json(await response.json());
   return res.status(200).json({ url: `${SUPABASE_URL}/storage/v1/object/public/site-media/${path}` });
