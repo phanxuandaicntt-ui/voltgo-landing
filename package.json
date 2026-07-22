@@ -1,1 +1,40 @@
-{"name":"voltgo-landing","version":"1.0.0","private":true,"scripts":{"dev":"npx serve .","build":"node -e \"console.log('Static site ready')\""}}
+{
+  "name": "sieu-thi-gia-dung",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "latest",
+    "@prisma/client": "latest",
+    "@supabase/ssr": "latest",
+    "@supabase/supabase-js": "latest",
+    "bcryptjs": "latest",
+    "jose": "latest",
+    "lucide-react": "latest",
+    "next": "16.0.10",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-hook-form": "latest",
+    "resend": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.0.10",
+    "prisma": "latest",
+    "tailwindcss": "latest",
+    "typescript": "^5.9.3",
+    "vitest": "latest"
+  }
+}

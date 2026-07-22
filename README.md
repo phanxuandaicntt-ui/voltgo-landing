@@ -1,11 +1,24 @@
-# VoltGo Landing Page
+# Siêu Thị Gia Dụng
 
-Landing page bán pin sạc dự phòng 120W 80.000mAh, responsive và kết nối Supabase để nhận đơn.
+Website thương mại điện tử mobile-first cho đồ gia dụng tiện ích, xây dựng với Next.js 16, React 19, TypeScript, Tailwind CSS 4, Prisma và Supabase.
 
-## Chạy local
+## Khởi chạy
 
-Mở `index.html` hoặc chạy một static server.
+```bash
+pnpm install
+copy .env.example .env.local
+pnpm dev
+```
 
-## Cấu hình
+## Kiểm tra production
 
-Điền Supabase Project URL và anon key vào `config.js`. Chạy `supabase-schema.sql` trong SQL Editor để tạo bảng nhận đơn.
+```bash
+pnpm typecheck
+pnpm lint
+pnpm test
+pnpm build
+```
+
+Không commit token. Cấu hình Supabase, SePay, Resend và auth qua biến môi trường trên Vercel. Chạy `supabase/migrations/0001_init.sql` bằng Supabase SQL Editor trước khi nhận đơn thật.
+
+Tài liệu kiến trúc và quyết định thiết kế nằm tại `docs/architecture.md`.

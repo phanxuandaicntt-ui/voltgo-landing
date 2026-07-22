@@ -1,0 +1,2 @@
+import { describe,expect,it } from "vitest";import { orderSchema } from "../lib/validation";
+describe("order validation",()=>{it("accepts a valid Vietnamese order",()=>{expect(orderSchema.safeParse({fullName:"Nguyễn An",phone:"0912345678",email:"an@example.com",address:"12 Nguyễn Huệ, Quận 1",items:[{productId:"p1",quantity:1}]}).success).toBe(true)});it("rejects invalid phone and empty cart",()=>{expect(orderSchema.safeParse({fullName:"A",phone:"123",address:"x",items:[]}).success).toBe(false)})});

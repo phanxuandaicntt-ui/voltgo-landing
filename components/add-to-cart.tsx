@@ -1,0 +1,1 @@
+"use client";import { ShoppingBag } from "lucide-react";import { useCart } from "@/context/cart-context";import type { Product } from "@/lib/types";export function AddToCart({product}:{product:Product}){const {add}=useCart();return <button className="btn btn-primary" style={{width:"100%",padding:15}} onClick={()=>add(product)}><ShoppingBag size={19}/> Thêm vào giỏ hàng</button>}
