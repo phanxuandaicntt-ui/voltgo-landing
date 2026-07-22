@@ -54,18 +54,12 @@ form.addEventListener('submit', async (event) => {
   statusBox.textContent = '';
 
   try {
-    if (!window.APP_CONFIG?.supabaseUrl || !window.APP_CONFIG?.supabaseAnonKey) {
-      throw new Error('Hệ thống nhận đơn đang được cấu hình. Vui lòng thử lại sau.');
-    }
-    const response = await fetch(`${window.APP_CONFIG.supabaseUrl}/rest/v1/orders`, {
+    const response = await fetch('/api/order', {
       method: 'POST',
       headers: {
-        apikey: window.APP_CONFIG.supabaseAnonKey,
-        Authorization: `Bearer ${window.APP_CONFIG.supabaseAnonKey}`,
-        'Content-Type': 'application/json',
-        Prefer: 'return=minimal'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ ...data, quantity: Number(data.quantity), source: 'voltgo-landing' })
+      body: JSON.stringify({ ...data, quantity: Number(data.quantity) })
     });
     if (!response.ok) throw new Error('Không thể gửi đơn lúc này. Vui lòng thử lại.');
     form.reset();
